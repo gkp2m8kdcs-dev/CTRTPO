@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTRTPO — Reclaim Your Photo Library</title>
+  <meta name="description" content="CTRTPO helps you find duplicate, similar and oversized photos so you can free up storage on your iPhone — privately, on-device." />
+  <style>
+    :root {
+      --bg: #fbf7ef;
+      --surface: #ffffff;
+      --ink: #1c1a16;
+      --ink-soft: #5b574e;
+      --line: #ece5d6;
+      --accent: #c8a86a;
+      --accent-deep: #a78748;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251, 247, 239, 0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-weight: 700; font-size: 18px; letter-spacing: 0.5px; color: var(--ink); }
+    .brand span { color: var(--accent-deep); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--ink-soft); font-size: 14px; }
+    .nav-links a:hover { color: var(--ink); text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 96px 0 72px; }
+    .hero .eyebrow { color: var(--accent-deep); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; margin: 0 0 20px; letter-spacing: -0.02em; font-weight: 700; }
+    .hero p.lead { font-size: 18px; color: var(--ink-soft); max-width: 620px; margin: 0 0 32px; }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-primary { background: var(--ink); color: #fff; }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.12); text-decoration: none; }
+    .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    .btn-ghost:hover { border-color: var(--ink); text-decoration: none; }
+    .hero-art {
+      margin-top: 56px;
+      border-radius: 28px; overflow: hidden;
+      background: linear-gradient(135deg, #efe5cf 0%, #d9c69a 100%);
+      aspect-ratio: 16 / 9;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(28,26,22,.5); font-weight: 600; letter-spacing: 2px;
+    }
+
+    /* Sections */
+    section { padding: 80px 0; border-top: 1px solid var(--line); }
+    .section-title { font-size: 32px; letter-spacing: -0.01em; margin: 0 0 12px; }
+    .section-sub { color: var(--ink-soft); max-width: 620px; margin: 0 0 48px; }
+
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feature {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+      padding: 28px; transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .feature:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,.05); }
+    .feature .icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: #f3ead4; color: var(--accent-deep);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 18px; margin-bottom: 16px;
+    }
+    .feature h3 { margin: 0 0 8px; font-size: 18px; }
+    .feature p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+
+    /* Privacy strip */
+    .privacy {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 24px;
+      padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;
+    }
+    .privacy h2 { margin: 0 0 12px; font-size: 28px; }
+    .privacy p { margin: 0 0 16px; color: var(--ink-soft); }
+    .privacy ul { padding-left: 18px; margin: 0; color: var(--ink-soft); }
+    .privacy li { margin-bottom: 6px; }
+
+    /* Footer */
+    footer { padding: 40px 0 56px; color: var(--ink-soft); font-size: 14px; border-top: 1px solid var(--line); margin-top: 80px; }
+    .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .foot-links { display: flex; gap: 18px; }
+
+    @media (max-width: 760px) {
+      .features { grid-template-columns: 1fr; }
+      .privacy { grid-template-columns: 1fr; padding: 28px; }
+      .nav-links { display: none; }
+      .hero { padding: 64px 0 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">CTRT<span>PO</span></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#features">Features</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="border-top:0;">
+      <div class="wrap">
+        <div class="eyebrow">Private photo storage</div>
+        <h1>A calmer way to clean your camera roll.</h1>
+        <p class="lead">CTRTPO finds duplicate, similar and oversized photos on your iPhone so you can reclaim gigabytes of space — without your images ever leaving the device.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#features">Learn more</a>
+          <a class="btn btn-ghost" href="support.html">Get support</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          CTRTPO
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <h2 class="section-title">Everything you need, nothing you don't.</h2>
+        <p class="section-sub">A focused toolkit for keeping your photo library tidy — without subscriptions, ads, or trackers.</p>
+        <div class="features">
+          <div class="feature">
+            <div class="icon">D</div>
+            <h3>Duplicate detection</h3>
+            <p>Find exact copies and visually similar shots so you can keep the best one and remove the rest.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">S</div>
+            <h3>Smart storage</h3>
+            <p>See exactly what's eating your iPhone's space — large videos, screenshots, burst photos — in one glance.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">P</div>
+            <h3>100% on-device</h3>
+            <p>All analysis happens locally. No uploads, no accounts, no background tracking. Your photos stay yours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="privacy">
+          <div>
+            <h2>Privacy by design.</h2>
+            <p>CTRTPO is built around a simple promise: we never see your photos. Analysis runs on your iPhone, permissions are explicit, and there is no analytics SDK in the app.</p>
+            <a class="btn btn-primary" href="privacy.html">Read the privacy policy</a>
+          </div>
+          <ul>
+            <li>No accounts or sign-in</li>
+            <li>No third-party trackers</li>
+            <li>Photo access is used only for the features you trigger</li>
+            <li>No data leaves your device</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 CTRTPO. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — CTRTPO</title>
+  <meta name="description" content="Get help with CTRTPO — FAQs, troubleshooting, and contact information." />
+  <style>
+    :root{--bg:#fbf7ef;--surface:#fff;--ink:#1c1a16;--ink-soft:#5b574e;--line:#ece5d6;--accent:#c8a86a;--accent-deep:#a78748}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent-deep);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.85);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:700;font-size:18px;letter-spacing:.5px}
+    .brand span{color:var(--accent-deep)}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{color:var(--ink-soft);font-size:14px}
+    .nav-links a:hover{color:var(--ink);text-decoration:none}
+    main{padding:64px 0 32px}
+    h1{font-size:40px;letter-spacing:-.02em;margin:0 0 12px}
+    .lead{color:var(--ink-soft);font-size:17px;max-width:680px;margin:0 0 40px}
+    h2{font-size:22px;margin:40px 0 12px;letter-spacing:-.01em}
+    .faq-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:12px}
+    .faq-item h3{margin:0 0 8px;font-size:16px}
+    .faq-item p{margin:0;color:var(--ink-soft);font-size:14px}
+    .contact{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+    .contact .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:14px}
+    .contact .btn:hover{text-decoration:none}
+    footer{padding:40px 0 56px;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);margin-top:64px}
+    .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .foot-links{display:flex;gap:18px}
+    @media(max-width:760px){.nav-links{display:none}.contact{grid-template-columns:1fr;padding:22px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">CTRT<span>PO</span></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <h1>Support</h1>
+      <p class="lead">We're here to help. Most questions are answered below — and if not, you can reach us directly.</p>
+
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>How does CTRTPO find duplicates?</h3>
+        <p>CTRTPO computes a perceptual signature for each photo on your device and compares those signatures locally. Exact duplicates share identical signatures; similar shots share closely-matching ones. No image ever leaves your iPhone.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Where does my data go?</h3>
+        <p>Nowhere. CTRTPO does not upload photos, metadata, or any analytics to a server. All analysis happens on-device inside Apple's standard Photos framework.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does CTRTPO need photo library access?</h3>
+        <p>iOS requires explicit permission to read your library in order to scan it for duplicates, similar shots, and large items. You can revoke this at any time in iOS Settings → Privacy → Photos.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>I deleted a photo by accident. Can I get it back?</h3>
+        <p>Yes. Deletions go to the system "Recently Deleted" album for 30 days. Open the Photos app → Albums → Recently Deleted to restore.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does storage analysis show different numbers than Settings?</h3>
+        <p>iOS Settings shows total device storage, which includes system files, app data, and cached items. CTRTPO focuses on your photo library specifically, so the two numbers will differ by design.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Does CTRTPO support iCloud Photos?</h3>
+        <p>Yes. CTRTPO reads through the standard Photos framework, which transparently works with iCloud Photos. Items not yet downloaded will appear in results and will download on demand when you open them.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I delete the app's local data?</h3>
+        <p>Deleting CTRTPO from your iPhone removes all of its local data, including cached scan results. There is no separate account or cloud backup to clear.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I report a bug or request a feature?</h3>
+        <p>Use the contact options below. Please include your iOS version, iPhone model, and a short description (or screenshot) of what happened.</p>
+      </div>
+
+      <div class="contact">
+        <div>
+          <h2 style="margin-top:0">Still need help?</h2>
+          <p style="color:var(--ink-soft);margin:0 0 14px">Send us a note and we'll get back to you as soon as we can.</p>
+          <a class="btn" href="mailto:support@ctrtpo.app">Email support</a>
+        </div>
+        <div style="color:var(--ink-soft);font-size:14px">
+          <strong style="color:var(--ink);display:block;margin-bottom:6px">Before you write in</strong>
+          Please include: iOS version, iPhone model, app version (Settings → General → iPhone Storage → CTRTPO), and a clear description of the issue.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 CTRTPO. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

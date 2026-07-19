@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — CTRTPO</title>
+  <meta name="description" content="CTRTPO's privacy policy: how the app handles your photos, permissions, and data — all on-device, all private." />
+  <style>
+    :root { --bg:#fbf7ef; --surface:#fff; --ink:#1c1a16; --ink-soft:#5b574e; --line:#ece5d6; --accent-deep:#a78748; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent-deep);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.85);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:700;font-size:18px;letter-spacing:.5px}
+    .brand span{color:var(--accent-deep)}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{color:var(--ink-soft);font-size:14px}
+    .nav-links a:hover{color:var(--ink);text-decoration:none}
+    main{padding:64px 0 32px}
+    h1{font-size:40px;letter-spacing:-.02em;margin:0 0 12px}
+    .meta{color:var(--ink-soft);font-size:14px;margin-bottom:40px}
+    h2{font-size:22px;margin:40px 0 12px;letter-spacing:-.01em}
+    p{margin:0 0 14px;color:var(--ink)}
+    ul{padding-left:20px;margin:0 0 16px}
+    li{margin-bottom:6px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin:24px 0}
+    footer{padding:40px 0 56px;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line);margin-top:64px}
+    .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .foot-links{display:flex;gap:18px}
+    @media(max-width:760px){.nav-links{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">CTRT<span>PO</span></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <h1>Privacy Policy</h1>
+      <div class="meta">Last updated: July 19, 2026</div>
+
+      <p>CTRTPO ("we", "our", "the app") is a photo and storage management app for iOS. This Privacy Policy explains what data the app handles, how it handles it, and what it does <em>not</em> do. The short version: <strong>your photos never leave your device.</strong></p>
+
+      <div class="card">
+        <strong>TL;DR.</strong> CTRTPO runs entirely on-device. We do not collect, transmit, sell, or share your photos or personal information. There is no account system, no analytics SDK, and no advertising.
+      </div>
+
+      <h2>1. Information we do not collect</h2>
+      <p>We do not collect, store, or transmit:</p>
+      <ul>
+        <li>Your photos, videos, or any image content from your library.</li>
+        <li>Your name, email address, phone number, or contact information.</li>
+        <li>Device identifiers used for tracking (IDFA, fingerprinting, etc.).</li>
+        <li>Location data, browsing history, or purchase history.</li>
+        <li>Any analytics, telemetry, or crash data tied to your identity.</li>
+      </ul>
+
+      <h2>2. Permissions the app requests</h2>
+      <p>iOS requires user-granted permission before an app can access certain data. CTRTPO requests only the permissions it needs, only when it needs them, and only for the purpose described:</p>
+      <ul>
+        <li><strong>Photo Library (read):</strong> to scan your local photos for duplicates, similar images, and large files so you can clean them up. Processing happens entirely on your device.</li>
+        <li><strong>Photo Library (write/add):</strong> to save photos you take with the in-app camera. CTRTPO will only add items you explicitly capture.</li>
+        <li><strong>Camera:</strong> to let you capture photos inside the app. Captured images are saved locally to your library with your permission; no image is uploaded.</li>
+      </ul>
+      <p>You can revoke any of these permissions at any time in iOS Settings → Privacy.</p>
+
+      <h2>3. How "analyze" works</h2>
+      <p>When you tap <em>Analyze</em> (or start a cleanup flow), CTRTPO reads metadata and pixel signatures from items in your photo library on your device. The app compares these signatures locally to detect duplicates and similar shots, and computes file sizes to identify large items. The results are stored locally in the app's sandbox and are deleted when you delete the app or clear its data. <strong>None of this analysis is sent to any server.</strong></p>
+
+      <h2>4. Deleting photos</h2>
+      <p>When you choose to remove a photo, CTRTPO uses Apple's standard Photos framework APIs to move the item to the system "Recently Deleted" album. The actual deletion from your library is performed by iOS after the standard 30-day retention window (or earlier, if you tap Delete inside the Photos app).</p>
+
+      <h2>5. Required API disclosures (Apple "Privacy Manifest")</h2>
+      <p>CTRTPO's iOS privacy manifest declares the following required-reason API usage, all for functionality within the app:</p>
+      <ul>
+        <li><strong>File timestamp:</strong> reason DDA9.0 — to display capture dates of photos.</li>
+        <li><strong>Disk space:</strong> reason E174.1 — to compute available and used storage.</li>
+        <li><strong>User defaults:</strong> reason CA92.1 — to store your in-app preferences.</li>
+        <li><strong>System boot time:</strong> reason 35F9.1 — for relative time calculations.</li>
+      </ul>
+
+      <h2>6. Children</h2>
+      <p>CTRTPO is intended for a general audience and does not knowingly collect personal information from children.</p>
+
+      <h2>7. Changes to this policy</h2>
+      <p>If we update this policy, we will revise the "Last updated" date above. Because CTRTPO does not collect personal information, there is no way for us to notify you directly of changes; please review this page periodically.</p>
+
+      <h2>8. Contact</h2>
+      <p>If you have any questions about this Privacy Policy or the app's data practices, please contact us through the <a href="support.html">Support</a> page.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 CTRTPO. All rights reserved.</div>
+      <div class="foot-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
